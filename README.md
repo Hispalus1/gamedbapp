@@ -1,1 +1,1 @@
-# gamedbapp
+# gamedb
