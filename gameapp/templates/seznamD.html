@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Seznam Her{% endblock %}
+
+{% block content %}
+    <div class="row mt-3 mb-3 bg-dark p-3 border border-light">
+    <div class="col-sm-12">
+        <h2 class="text-center text-white">Seznam vývojářů v databázi</h2>
+    </div>
+</div>
+<hr class="text-white">
+    <div class="row bg-secondary p-3 border border-light bg-dark">
+    {% for developer in developers %}
+        <div class="col-lg-2 col-md-4 ">
+            <img src="{{ developer.icon.url }}" style="width:250px; height:100px;"
+                 alt="Fotka: {{ developer.name }}"
+                 class="img-fluid rounded">
+            <p><a class="btn btn-primary border border-light bg-danger mt-3" href="{% url 'developer_detail' developer.id %}" role="button">{{ developer.name }}</a></p>
+        </div>
+    {% endfor %}
+    </div>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

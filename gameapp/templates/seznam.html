@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Seznam Her{% endblock %}
+
+{% block content %}
+    <div class="row mt-3 mb-3 bg-dark p-3 border border-light">
+    <div class="col-sm-12">
+        <h2 class="text-center text-white">Seznam her v databázi</h2>
+    </div>
+</div>
+<hr class="text-white">
+    <div class="row bg-secondary p-3 border border-light bg-dark">
+    {% for game in games %}
+        <div class="col-lg-2 col-md-4 ">
+            <img src="{{ game.icon.url }}" style="width:220px; height:250px;"
+                 alt="Fotka: {{ developer.name }}"
+                 class="img-fluid rounded">
+            <p><a class="btn btn-primary border border-light bg-danger mt-3" href="{% url 'game_detail' game.id %}" role="button">{{ game.name }}</a></p>
+        </div>
+    {% endfor %}
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
